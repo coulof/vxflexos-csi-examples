@@ -17,6 +17,8 @@ spec:
         app: "{{.Values.container.name.default}}"
     spec:
       serviceAccount: "{{.Values.container.serviceAccount}}"
+      securityContext:
+        fsGroup: 26
       containers:
       - name: {{.Values.container.name.default}}
         image: "{{.Values.image.repository}}/{{.Values.image.container}}:{{.Values.image.tag}}"
@@ -62,6 +64,15 @@ spec:
           readOnly: true
       volumes:
       - emptyDir: {}
-        name: pgdata
-      - emptyDir: {}
         name: backup
+  volumeClaimTemplates:
+  - metadata:
+      name: pgdata
+    spec:
+      accessModes:
+      - ReadWriteOnce
+      storageClassName: {{ .Values.resources.storageClass }}
+      volumeMode: Filesystem
+      resources:
+        requests:
+          storage: {{ .Values.pv.storage }}

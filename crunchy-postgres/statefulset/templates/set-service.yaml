@@ -8,9 +8,12 @@ metadata:
     release: {{ .Release.Name | quote }}
     chart: "{{.Chart.Name}}-{{.Chart.Version}}"
 spec:
+  type: NodePort
   ports:
-  - port: {{.Values.container.port}}
-    name: web
-  clusterIP: None
+  - name: pgsql
+    port: {{.Values.container.port}}
+    targetPort: {{.Values.container.port}}
+    nodePort: 31432
+    protocol: TCP
   selector:
     app: "{{.Values.container.name.default}}"
