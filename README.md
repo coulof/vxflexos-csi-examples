@@ -1,5 +1,5 @@
 # CSI VxFlexOS Examples
-This repository contains a collection of examples to use VxFlexOS as a storage class in Kubernetes
+This repository contains a collection of sample configuration to use VxFlexOS as a storage class in Kubernetes.
 
 The examples are usually simple forks of standard configurations but tuned to use VxFlexOS storage backend.
 
@@ -14,7 +14,9 @@ The modifications made to the [original helm chart](https://github.com/CrunchyDa
 * A new [service](crunchy-postgres/statefulstate/service.yaml) NodePort (TCP 31432) to ease connection to the DB from external world
 * A bigger default pvc
 
-## TODO
+## [demos](demos)
+In this directory you will find example configurations and videos on the usage of the driver.
+## Futures apps
 The next application candidates are :
 * Couchbase
 * Elasticsearch
