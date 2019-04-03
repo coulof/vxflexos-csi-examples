@@ -16,7 +16,7 @@ image:
   container: crunchy-postgres
   tag: centos7-10.6-2.3.0
 pv:
-  storage: 400M
+  storage: 8Gi
   name: pgset-pv
 pvc:
   name: pgset-pvc
@@ -24,7 +24,7 @@ resources:
   cpu: 200m
   memory: 512Mi
   persistence:
-    storageClass: standard
+    storageClass: vxflexos
     storageClassType: standard
     accessModes:
     - ReadWriteMany
