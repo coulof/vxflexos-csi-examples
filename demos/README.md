@@ -34,7 +34,20 @@ For detailed configuration, you can refer to the [official CSI documentation](ht
 Soon
 
 # Use postgres HA + CSI Driver
-Soon
+In that demo we use [CrunchyData](https://crunchydata.github.io/crunchy-containers/stable/) PosgreSQL distribution which provides native High Availability configuration.
+
+The modifications made to the [original helm chart](https://github.com/CrunchyData/crunchy-containers/examples/helm/statefulstate) are :
+* vxflexos as [default storage class](../crunchy-postgres/statefulset/values.yaml#L27)
+* A new [service](../crunchy-postgres/statefulstate/service.yaml) NodePort (TCP 31432) to ease connection to the DB from external world
+* A bigger default pvc to be consistent with VxFlexOS requirements
+
+For more documentation on pod setup and the configuration you can do, please refer to : https://crunchydata.github.io/crunchy-containers/stable/container-specifications/crunchy-postgres/
+
+
 
 # Infinite scaling with Couchbase and VxFlex OS
+Soon
+
+
+# Have fun with snapshots
 Soon
