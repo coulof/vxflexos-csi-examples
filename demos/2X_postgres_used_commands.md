@@ -3,6 +3,7 @@ lolcat -a 20_postgres_intro.md
 ssh k8s-master kubectl get nodes
 
 # first let's get the examples with postgres helm charts
+
 curl -LO https://github.com/coulof/vxflexos-csi-examples/archive/master.zip
 unzip master.zip
 cd vxflexos-csi-examples-master/crunchy-postgres
@@ -58,18 +59,18 @@ pgbench -h pgset-replica -U postgres -i -s 10 userdb
 # Note the replica is read-only
 
 # in the next section we will simulate a node failure
+
 kubectl get pods -o wide
 kubectl cordon ${NODE}
 kubectl get nodes 
 kubectl get pods -o wide
 
-# the primary is still running
 
+# the primary is still running
 kubectl delete pod pgset-0
 kubectl uncordon ${NODE}
 
 kubectl get pods -o wide
-
 
 # The pod restarted
 kubectl exec -ti pgset-0 -- bash
