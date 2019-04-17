@@ -43,7 +43,17 @@ The modifications made to the [original helm chart](https://github.com/CrunchyDa
 
 For more documentation on pod setup and the configuration you can do, please refer to : https://crunchydata.github.io/crunchy-containers/stable/container-specifications/crunchy-postgres/
 
-[![asciicast](https://asciinema.org/a/239802.svg)](https://asciinema.org/a/239802?speed=2)
+## Step 1 - Check CSI driver for VxFlexOS
+[![asciicast](https://asciinema.org/a/241285.svg)](https://asciinema.org/a/241285)
+
+## Step 2 - Install PostgreSQL in HA with VxFlexOS
+[![asciicast](https://asciinema.org/a/241282.svg)](https://asciinema.org/a/241282)
+
+## Step 3 - Load data in Postgres and make sure it is synchronized
+[![asciicast](https://asciinema.org/a/241293.svg)](https://asciinema.org/a/241293)
+
+## Step 4 - Node failure and scale Posgres
+[![asciicast](https://asciinema.org/a/241295.svg)](https://asciinema.org/a/241295)
 
 # Infinite scaling with Couchbase and VxFlex OS
 Soon
